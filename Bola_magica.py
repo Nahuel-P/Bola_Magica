@@ -6,15 +6,12 @@ respuestas=["En mi opinión, sí", "Es cierto", "Es decididamente así", "Probab
             "No cuentes con ello","Mi respuesta es no","Mis fuentes me dicen que no","Las perspectivas no son buenas", "Muy dudoso"]
 entrada_o_salida=input("Presiona ENTER para agitar la bola magica. Escribe SALIR para salir: ")
 
-if(entrada_o_salida.lower()=="salir"):
-    print("Nos vemos")
-elif (entrada_o_salida!=""):
-    print("No ingresaste algo valido")
-    entrada_o_salida=input("Presiona ENTER para agitar la bola magica. Escribe SALIR para salir: ")
-
-
-while(entrada_o_salida==""):
-    pregunta=input("Cual es tu pregunta? \n")
-    print(respuestas[random.randint(0,20)])
-    entrada_o_salida=input("Presiona ENTER para agitar la bola magica. Escribe SALIR para salir: ")
-
+while(entrada_o_salida.lower()!="salir"):
+    if entrada_o_salida=="":
+        pregunta=input("Cual es tu pregunta? \n")
+        print(random.choice(respuestas))
+        entrada_o_salida=input("Presiona ENTER para agitar la bola magica. Escribe SALIR para salir: ")
+    elif not(entrada_o_salida.lower()=="salir" or entrada_o_salida==""):
+        print("No ingresaste algo valido")
+        entrada_o_salida=input("Presiona ENTER para agitar la bola magica. Escribe SALIR para salir: ")
+print("Adios!")
